@@ -42,6 +42,11 @@ void AAuraCharacter::OnRep_PlayerState()
 void AAuraCharacter::InitAbilityActorInfo()
 {
 	AAuraPlayerState* AuraPlayerState = GetPlayerState<AAuraPlayerState>();
+	//if (!IsValid(AuraPlayerState))
+	//{
+	//	UE_LOG(LogTemp, Warning, TEXT("PlayerState: %s"), *GetNameSafe(GetPlayerState()));
+	//	return;
+	//}
 	check(AuraPlayerState);
 	AuraPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(AuraPlayerState, this);
 	AbilitySystemComponent = AuraPlayerState->GetAbilitySystemComponent();
